@@ -1,11 +1,8 @@
 package main
 
-import (
-	_ "github.com/BeenzSyed/goWebApp/routers"
-	"github.com/astaxie/beego"
-)
+import _ "github.com/BeenzSyed/goWebApp/routers"
 
-func main() {
-	beego.Run()
-}
-
+//
+// func main() {
+// 	beego.Run()
+// }
