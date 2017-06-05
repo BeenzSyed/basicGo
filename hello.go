@@ -12,7 +12,7 @@ func (this *MainController) Get() {
 	this.Ctx.WriteString("hello world!")
 }
 
-func main() {
-	beego.Router("/", &MainController{})
-	beego.Run()
-}
+// func main() {
+// 	beego.Router("/", &MainController{})
+// 	beego.Run()
+// }

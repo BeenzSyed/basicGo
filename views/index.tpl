@@ -86,6 +86,8 @@
       <a href="http://{{.Website}}">{{.Website}}</a> /
       Contact me:
       <a class="email" href="mailto:{{.Email}}">{{.Email}}</a>
+      Test:
+      <a class="test" href="Test Data:">{{.Test}}</a>
     </div>
   </footer>
   <div class="backdrop"></div>
