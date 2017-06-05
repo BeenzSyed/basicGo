@@ -1,3 +1,3 @@
-Username: {{.Username}
+Username: {{.Username}}
 <br>
 Result: {{.Result}}
