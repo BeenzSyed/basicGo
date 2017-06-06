@@ -18,14 +18,16 @@ func (c *MainController) Get() {
 
 func (c *MainController) UserRegister() {
 	username := c.Ctx.Input.Param(":username")
-
-	err := models.AddUser(username)
-
 	c.Data["Username"] = username
-	c.Data["Result"] = false
 
-	if err == nil {
-		c.Data["Result"] = true
+	check := models.CheckUser(username)
+	c.Data["UserExists"] = check
+	if check == nil {
+		err := models.AddUser(username)
+		c.Data["Result"] = false
+		if err == nil {
+			c.Data["Result"] = true
+		}
 	}
 
 	c.TplName = "register.tpl"
