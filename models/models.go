@@ -24,20 +24,15 @@ func AddUser(username string) error {
 	return err
 }
 
-func CheckUser(username string) error {
+func CheckUser(username string) int {
 	o := orm.NewOrm()
 	o.Using("default")
 
-	users := Users{Id: 1}
+	var exist int
+	o.Raw("SELECT EXISTS(SELECT * FROM users WHERE username = ?) as exist;",
+		username).QueryRow(&exist)
 
-	err := o.Read(&users)
+	fmt.Println(exist)
 
-	if err == orm.ErrNoRows {
-		fmt.Println("No result found.")
-	} else if err == orm.ErrMissPK {
-		fmt.Println("No primary key found.")
-	} else {
-		fmt.Printf("Results: %v\n", users.username)
-	}
-	return err
+	return exist
 }
