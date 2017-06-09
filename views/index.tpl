@@ -51,6 +51,11 @@
       color: #999;
     }
 
+    .login {
+      text-align: center;
+      font-size: 16px;
+    }
+
     .description {
       text-align: center;
       font-size: 16px;
@@ -80,6 +85,10 @@
       Beego is a simple & powerful Go web framework which is inspired by tornado and sinatra.
     </div>
   </header>
+  <div class="login">
+    <a href="/login">Login</a>
+    <a href="/signup">Sign Up</a>
+  </div>
   <footer>
     <div class="author">
       Official website:
